@@ -1,0 +1,25 @@
+name: Super-Linter
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    super-linter:
+        name: Lint codebase
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+                uses: actions/checkout@v2
+            - name: Set up Super-Linter
+                uses: github/super-linter@v4
+                with:
+                    # Set the Super-Linter to only run on the languages you are using in your project
+                    # For example, if you are only using Python and JavaScript, set this to "python,javascript"
+                    # See https://github.com/github/super-linter/blob/master/docs/languages.md for a list of supported languages
+                    languages: "javascript"
+                    # Set the Super-Linter to only show errors, not warnings
+                    # Change this to "false" if you want to see warnings as well
+                    errors-only: true
