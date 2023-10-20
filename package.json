@@ -4,6 +4,7 @@
   "description": "Express hello world app",
   "main": "index.js",
   "scripts": {
+    "lint": "docker run --rm -e RUN_LOCAL=true -v $(pwd):/tmp/lint ghcr.io/super-linter/super-linter",
     "start": "node index.js"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/pwideman/actions-testing#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
   }
 }
