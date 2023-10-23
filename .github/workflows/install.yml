@@ -1,0 +1,17 @@
+name: Super-Linter
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # Set the agent to run on
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: NPM Install
+        run: |
+            npm install
