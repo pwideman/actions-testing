@@ -12,7 +12,7 @@ jobs:
     # Name the Job
     name: Lint Code Base
     # Set the agent to run on
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     ############################################
     # Grant status permission for MULTI_STATUS #
@@ -40,7 +40,7 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v5
+        uses: super-linter/super-linter/slim@v5.6.0
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
