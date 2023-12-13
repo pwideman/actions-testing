@@ -1,10 +1,10 @@
-name: Windows
+name: Windows-2022
 
 on:
   workflow_dispatch:
 
 jobs:
-  windows:
+  print-netfx-version:
     # Set the agent to run on
     runs-on: windows-2022
 
