@@ -1,0 +1,16 @@
+name: Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    # Set the agent to run on
+    runs-on: windows-2022
+
+    steps:
+      - name: Get .NET Framework version
+        shell: powershell
+        run: |
+            Get-ItemPropertyValue -LiteralPath 'HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full' -Name Version
+            Get-ItemPropertyValue -LiteralPath 'HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full' -Name Release
